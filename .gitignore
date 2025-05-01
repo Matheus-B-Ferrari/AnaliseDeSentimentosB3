@@ -1,0 +1,17 @@
+# Ignorar ambiente virtual
+venv/
+
+# Caches e arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*.log
+
+# Notebooks temporários
+.ipynb_checkpoints/
+
+# VSCode configs pessoais
+.vscode/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
