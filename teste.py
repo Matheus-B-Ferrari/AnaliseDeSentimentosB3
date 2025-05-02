@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
-from datetime import datetime
+from datetime import datetime, date
 
 HEADERS = {'User-Agent': 'Mozilla/5.0'}
 NOTICIAS = []
@@ -22,6 +22,13 @@ def scrape_rss(fonte, feed_url):
     print(f"[{fonte}] {len(feed.entries)} notícias disponíveis no feed.")
 
     for entry in feed.entries:
+        if hasattr(entry, 'published_parsed'):
+            data_pub = datetime(*entry.published_parsed[:6]).date()
+            if data_pub != date.today():
+                continue  # Ignora notícias de dias anteriores
+        else:
+            continue  # Sem data? pula
+
         link = entry.link
         titulo = entry.title
 
@@ -35,7 +42,7 @@ def scrape_rss(fonte, feed_url):
 
             NOTICIAS.append({
                 'url': link,
-                'data': datetime.now().strftime('%Y-%m-%d'),
+                'data': data_pub.strftime('%Y-%m-%d'),
                 'titulo': titulo,
                 'texto': texto,
                 'fonte': fonte
@@ -46,18 +53,24 @@ def scrape_rss(fonte, feed_url):
             print(f"[{fonte}] Erro ao processar {link}: {e}")
 
 # Valor Econômico via SCRAPING
-def scrape_valor(paginas=3):
+def scrape_valor(paginas=5):
     print("\n=== Coletando Valor Econômico (scraping) ===")
     links = set()
+    hoje_str = datetime.now().strftime('/noticia/%Y/%m/%d/')
+
     for i in range(1, paginas + 1):
         url = f'https://valor.globo.com/ultimas-noticias/index/feed/pagina-{i}'
         resp = requests.get(url, headers=HEADERS)
         soup = BeautifulSoup(resp.content, 'html.parser')
         h2_tags = soup.find_all('h2', class_='feed-post-link')
+
         for h2 in h2_tags:
             a = h2.find('a', href=True)
-            if a and 'valor.globo.com' in a['href'] and not a['href'].endswith(('.pdf', '.jpg', '.png')):
+            if (a and 'valor.globo.com' in a['href'] 
+                and hoje_str in a['href']  # <- só pega de hoje
+                and not a['href'].endswith(('.pdf', '.jpg', '.png'))):
                 links.add(a['href'])
+
         time.sleep(1)
 
     for link in list(links):
@@ -87,8 +100,8 @@ def scrape_valor(paginas=3):
 
 # EXECUTA TODOS
 scrape_rss('Exame', 'https://exame.com/feed/')
-scrape_rss('Infomoney', 'https://www.infomoney.com.br/feed/')
-scrape_valor(paginas=3)
+scrape_rss('Infomoney', 'https://www.infomoney.com.br/mercados/feed/')
+scrape_valor()
 
 # SALVA CSV
 df = pd.DataFrame(NOTICIAS)
