@@ -2,7 +2,7 @@ name: Coleta diária de notícias
 
 on:
   schedule:
-    - cron: '40 20 * * *'  # Executar às 23:40 UTC-3
+    - cron: '30 20 * * *'  # Executar às 23:30 UTC-3
   workflow_dispatch:  
 
 jobs:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Clonar o repositório
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Configurar Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.13'
 
     - name: Instalar dependências
       run: |
@@ -26,10 +26,10 @@ jobs:
     - name: Executar script de coleta
       run: python teste.py
 
-    - name: Fazer commit dos resultados
+    - name: Commit CSV
       run: |
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
         git add noticias/
-        git commit -m "Atualização automática: notícias do dia"
+        git commit -m "Notícias $(date +'%d/%m/%Y')" || echo "Nada para commitar"
         git push
