@@ -2,7 +2,7 @@ name: Coleta diária de notícias
 
 on:
   schedule:
-    - cron: '30 20 * * *'  # Executar às 23:30 UTC-3
+    - cron: '30 2 * * *'  # Executar às 23:30 UTC-3
   workflow_dispatch:  
 
 jobs:
