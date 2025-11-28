@@ -81,6 +81,22 @@ Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
 <img width="842" height="119" alt="image" src="https://github.com/user-attachments/assets/846f30f9-e481-4c92-be91-fa2ae6a95a0f" />
 
 
+## Impacto por ativo
+
+BOVA11.SA obteve a maior taxa de melhoria estatisticamente significante
+
+### LSTM
+
+<img width="1183" height="584" alt="image" src="https://github.com/user-attachments/assets/bda30d27-4aab-49d3-ba6c-36e4b1ef14c8" />
+
+<img width="1381" height="779" alt="image" src="https://github.com/user-attachments/assets/4a86a826-1576-4ab6-ad18-0d3d7e8e39a4" />
+
+
+### SVR
+
+<img width="1183" height="584" alt="image" src="https://github.com/user-attachments/assets/3ccdf8fc-f9fa-4eb7-8985-5e4ab298777d" />
+
+<img width="1381" height="779" alt="image" src="https://github.com/user-attachments/assets/b2c87855-f61e-4e18-8845-df4132830e77" />
 
 
 
