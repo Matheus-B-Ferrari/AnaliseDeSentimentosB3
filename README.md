@@ -27,6 +27,13 @@ O conjunto de dados foi construído através de coleta automatizada diária via 
 **Total de notícias**: 8.762
 
 
+
+<img width="690" height="490" alt="image" src="https://github.com/user-attachments/assets/e1753035-0bf6-43d2-8233-b1b191d2c14a" />
+
+
+<img width="1390" height="490" alt="image" src="https://github.com/user-attachments/assets/e2d0f688-d1cf-4f1b-bc7c-099b9e7deff7" />
+
+
 ### Dados de Mercado
 
 Dados históricos (open, high, low, close, volume) obtidos via biblioteca yfinance:
