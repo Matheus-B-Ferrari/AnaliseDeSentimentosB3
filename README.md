@@ -80,13 +80,6 @@ Este estudo demonstra que a integração de análise de sentimento com modelos d
 
 A disponibilização pública da base de notícias e do código-fonte contribui para o avanço da pesquisa em finanças comportamentais no contexto brasileiro.
 
-## Trabalhos Futuros
-
-- Expansão da base de dados com mais fontes e períodos
-- Reconhecimento de entidades para aplicar sentimento específico por ativo
-- Testes com outros modelos (XGBoost, Transformers, GRU)
-- Validação out-of-sample e backtesting em ambiente real
-- Análise de diferentes formas de agregação (média ponderada, decaimento temporal)
 
 ## Referências
 
