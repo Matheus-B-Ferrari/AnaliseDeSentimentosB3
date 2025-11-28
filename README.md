@@ -41,6 +41,7 @@ Dados históricos (open, high, low, close, volume) obtidos via biblioteca yfinan
 - **Período**: Maio a setembro de 2025
 - **Total de pregões**: 85 dias úteis
 
+<img width="533" height="188" alt="image" src="https://github.com/user-attachments/assets/7c69609d-9902-4b92-88dd-c8b13dc2d825" />
 
 
 ## Modelos Utilizados
