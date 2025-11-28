@@ -26,9 +26,6 @@ O conjunto de dados foi construído através de coleta automatizada diária via 
 **Período**: 01/05/2025 a 01/09/2025 (4 meses)  
 **Total de notícias**: 8.762
 
-<br>
-<img src="https://raw.githubusercontent.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/main/images/noticias_por_portal.png" width="600">
-<br>
 
 ### Dados de Mercado
 
