@@ -28,18 +28,21 @@ O conjunto de dados foi construído através de coleta automatizada diária via 
 
 
 
-<img width="690" height="490" alt="image" src="https://github.com/user-attachments/assets/e1753035-0bf6-43d2-8233-b1b191d2c14a" />
-
 
 <img width="1390" height="490" alt="image" src="https://github.com/user-attachments/assets/e2d0f688-d1cf-4f1b-bc7c-099b9e7deff7" />
+
+<img width="690" height="490" alt="image" src="https://github.com/user-attachments/assets/e1753035-0bf6-43d2-8233-b1b191d2c14a" />
+
 
 
 ### Dados de Mercado
 
-Dados históricos (open, high, low, close, volume) obtidos via biblioteca yfinance:
+Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
 - **Ativos analisados**: PETR4.SA, VALE3.SA, EMBR3.SA, BOVA11.SA
 - **Período**: Maio a setembro de 2025
 - **Total de pregões**: 85 dias úteis
+
+
 
 <img width="533" height="188" alt="image" src="https://github.com/user-attachments/assets/7c69609d-9902-4b92-88dd-c8b13dc2d825" />
 
@@ -76,6 +79,8 @@ Dados históricos (open, high, low, close, volume) obtidos via biblioteca yfinan
 ### Comparação entre Modelos
 
 <img width="842" height="119" alt="image" src="https://github.com/user-attachments/assets/846f30f9-e481-4c92-be91-fa2ae6a95a0f" />
+
+
 
 
 
