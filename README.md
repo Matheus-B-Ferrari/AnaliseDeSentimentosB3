@@ -101,6 +101,7 @@ Este estudo demonstra que a integração de análise de sentimento com modelos d
 - Utilizam-se arquiteturas que exploram relações temporais (LSTM)
 - O horizonte de previsão permite tempo para o sentimento afetar preços (h = 2 ou 5 dias)
 - O ativo analisado é um índice agregado (BOVA11)
+Também foi demonstrado que modelos mais simples podem superar arquiteturas complexas em bases de dados pequenas.
 
 O uso do FinBERT-PT-BR preenche uma lacuna na literatura brasileira ao incorporar informações subjetivas de forma sistemática. A disponibilização do código e da base tratada contribui para o avanço da pesquisa em finanças computacionais no país.
 
