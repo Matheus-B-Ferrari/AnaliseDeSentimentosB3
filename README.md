@@ -15,7 +15,7 @@ Foram coletadas 8.762 notícias de três portais brasileiros (Exame, Infomoney e
 
 Os principais resultados demonstram que o sentimento midiático pode complementar modelos quantitativos, especialmente em arquiteturas que exploram relações temporais nativamente, como a LSTM, com melhorias de até 38% no erro de previsão para horizontes de 5 dias.
 
-## Dados
+## [Dados](https://github.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/blob/main/Coleta_e_Processamento.ipynb)
 
 ### Coleta de Notícias
 
@@ -49,7 +49,7 @@ Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
 
 ## Modelos Utilizados
 
-#### LSTM (Long Short-Term Memory)
+#### [LSTM (Long Short-Term Memory)](https://github.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/blob/main/TCC_Unificado_LSTM.ipynb)
 - 1 camada LSTM com 64 neurônios
 - Dropout de 20%
 - Camada densa intermediária (32 neurônios, ReLU)
@@ -58,7 +58,7 @@ Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
 - Loss: MAE
 - Épocas: 100, Batch size: 8
 
-#### SVR (Support Vector Regression)
+#### [SVR (Support Vector Regression)](https://github.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/blob/main/TCC_Unificado_SVR.ipynb)
 - Kernel: RBF
 - Parâmetro C = 1.0
 - Gamma: 'scale' (adaptativo)
@@ -101,21 +101,39 @@ Este estudo demonstra que a integração de análise de sentimento com modelos d
 - O horizonte de previsão permite tempo para o sentimento afetar preços (≥ 2 dias)
 - O ativo analisado é um índice agregado (BOVA11)
 
-A disponibilização pública da base de notícias e do código-fonte contribui para o avanço da pesquisa em finanças comportamentais no contexto brasileiro.
+O uso do FinBERT-PT-BR preenche uma lacuna na literatura brasileira ao incorporar informações subjetivas de forma sistemática. A disponibilização do código e da base tratada contribui para o avanço da pesquisa em finanças computacionais no país.
+
+Trabalhos futuros incluem ampliar o conjunto de dados, aplicar sentimento por ativo via NER e testar modelos adicionais como XGBoost e RNNs alternativas.
 
 
 ## Referências
 
-[1] Santos, L., Bianchi, R., & Costa, A. (2023). FinBERT-PT-BR: Análise de sentimentos de textos em português do mercado financeiro. Brazilian Workshop on Artificial Intelligence in Finance.
+[1] ARACI, D. FinBERT: Financial Sentiment Analysis with Pre-trained Language Models. 2019. Disponível em: https://arxiv.org/abs/1908.10063.
 
-[2] Tetlock, P. C. (2007). Giving content to investor sentiment: The role of media in the stock market. The Journal of Finance, 62(3), 1139-1168.
+[2] BARBER, B. M.; ODEAN, T. All that glitters: The effect of attention and news on the buying behavior of individual and institutional investors. The Review of Financial Studies, Oxford University Press, v. 21, n. 2, p. 785–818, 2008.
 
-[3] Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural Computation, 9(8), 1735-1780.
+[3] DEVLIN, J. et al. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. 2019. Disponível em: https://arxiv.org/abs/1810.04805.
 
-[4] Vieira, J. E. A. L. (2025). Modelo preditivo para precificação de ativos com integração de notícias do mercado financeiro e técnicas de machine learning. FGV.
+[4] DRUCKER, H. et al. Support vector regression machines. In: MOZER, M.; JORDAN, M.; PETSCHE, T. (Ed.). Advances in Neural Information Processing Systems. MIT Press, 1996. v. 9. Disponível em: https://proceedings.neurips.cc/paper_files/paper/1996/file/d38901788c533e8286cb6400b40b386d-Paper.pdf.
 
----
+[5] FAMA, E. F. Efficient capital markets: A review of theory and empirical work. The Journal of Finance, Wiley Online Library, v. 25, n. 2, p. 383–417, 1970.
 
-**Faculdade de Computação e Informática (FCI)**  
-**Universidade Presbiteriana Mackenzie**  
-**2025**
+[7] GU, W. jun et al. Predicting stock prices with finbert-lstm: Integrating news sentiment analysis. In: Proceedings of the 2024 8th International Conference on Cloud and Big Data Computing. ACM, 2024. (ICCBDC 2024), p. 67–72. Disponível em: http://dx.doi.org/10.1145/3694860.3694870.
+
+[8] HALDER, S. FinBERT-LSTM: Deep Learning based stock price prediction using News Sentiment Analysis. 2022. Disponível em: https://arxiv.org/abs/2211.07392.
+
+[9] HOCHREITER, S.; SCHMIDHUBER, J. Long short-term memory. Neural Computation, v. 9, p. 1735–1780, nov. 1997.
+
+[10] KASTURE, P.; SHIRSATH, K. Enhancing stock market prediction: A hybrid rnn-lstm framework with sentiment analysis. Indian Journal Of Science And Technology, v. 17, p. 1880–1888, abr. 2024.
+
+[11] LIU, B. Sentiment Analysis and Opinion Mining. San Rafael, CA: Morgan & Claypool Publishers, 2012. (Synthesis Lectures on Human Language Technologies).
+
+[12] RICHARDSON, L. Beautiful Soup: Python Library for HTML and XML Parsing. 2007. Disponível em: https://www.crummy.com/software/BeautifulSoup/. Acesso em: 8 nov. 2025. Versão utilizada: BeautifulSoup4.
+
+[13] SANTOS, L.; BIANCHI, R.; COSTA, A. Finbert-pt-br: Análise de sentimentos de textos em português do mercado financeiro. In: Anais do II Brazilian Workshop on Artificial Intelligence in Finance. Porto Alegre, RS, Brasil: SBC, 2023. p. 144–155. Disponível em: https://sol.sbc.org.br/index.php/bwaif/article/view/24960.
+
+[14] TETLOCK, P. C. Giving content to investor sentiment: The role of media in the stock market. The Journal of Finance, Wiley Online Library, v. 62, n. 3, p. 1139–1168, 2007.
+
+[15] TETLOCK, P. C. Chapter 18 - The role of media in finance. In: ANDERSON, S. P.; WALDFOGEL, J.; STRÖMBERG, D. (Ed.). Handbook of Media Economics. North-Holland, 2015, (Handbook of Media Economics, v. 1). p. 701–721. Disponível em: https://www.sciencedirect.com/science/article/pii/B9780444636850000188.
+
+[17] VIEIRA, J. E. A. L. Modelo preditivo para precificação de ativos com integração de notícias do mercado financeiro e técnicas de machine learning. Dissertação (Mestrado) — Fundação Getúlio Vargas (FGV), São Paulo, 2025. Disponível em: https://repositorio.fgv.br/items/ca7c23d2-302c-4477-b9fe-f4102bdc523e.
