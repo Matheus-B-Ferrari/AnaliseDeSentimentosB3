@@ -13,7 +13,7 @@ Este trabalho investiga o impacto da análise de sentimento de notícias finance
 
 Foram coletadas 8.762 notícias de três portais brasileiros (Exame, Infomoney e Valor Econômico) entre maio e setembro de 2025. Cada notícia foi classificada quanto ao sentimento, e os scores diários foram agregados por mediana, criando uma série temporal representativa do humor do mercado. Esses dados foram integrados aos preços históricos de quatro ativos (PETR4, VALE3, EMBR3, BOVA11) para compor o dataset final utilizado na modelagem.
 
-Os modelos LSTM e SVR foram treinados com janelas temporais de 7 e 14 dias e horizontes de previsão de 1, 2 e 5 dias. Para avaliar a significância das diferenças, foram realizados testes t de Student comparando previsões com e sem sentimento em 72 experimentos, permitindo medir estatisticamente o impacto dessa variável.
+Os modelos LSTM e SVR foram treinados com janelas temporais de 7 e 14 dias e horizontes de previsão de 1, 2 e 5 dias. Para avaliar a significância das diferenças, foram realizados testes t de Student comparando previsões com e sem sentimento em 72 experimentos por modelo, permitindo medir estatisticamente o impacto dessa variável.
 
 Os resultados mostram que o sentimento midiático pode complementar modelos quantitativos tradicionais, especialmente em arquiteturas que capturam dependências temporais, como a LSTM. Nessas configurações, observam-se reduções de erro de até 38% em horizontes mais longos (5 dias), evidenciando que o efeito do sentimento tende a se manifestar com defasagem.
 
