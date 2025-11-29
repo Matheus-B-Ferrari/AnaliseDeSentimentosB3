@@ -1,9 +1,9 @@
 # Análise de Sentimento na Precificação de Ativos na Bolsa Brasileira
 
 ## Autores
-- **Felipe da Silva Morishita Garbi**
-- **Matheus Barbosa Ferrari**
-- **Rogério de Oliveira** - *Orientador do projeto*
+- Felipe da Silva Morishita Garbi
+- Matheus Barbosa Ferrari
+- Rogério de Oliveira - Orientador
 
 ### [Artigo Completo](https://github.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/blob/main/Análise_de_Sentimento_na_Precificação_de_Ativos_na_Bolsa_Brasileira.pdf)
 
@@ -20,11 +20,11 @@ Os principais resultados demonstram que o sentimento midiático pode complementa
 ### Coleta de Notícias
 
 O conjunto de dados foi construído através de coleta automatizada diária via GitHub Actions, executada às 23h30 (UTC-3). Foram utilizadas duas abordagens:
-- **RSS Feeds**: Para portais Exame e Infomoney
-- **Web Scraping**: Para Valor Econômico (BeautifulSoup4)
+- RSS Feeds: Para portais Exame e Infomoney
+- Web Scraping: Para Valor Econômico (BeautifulSoup4)
 
-**Período**: 01/05/2025 a 01/09/2025 (4 meses)  
-**Total de notícias**: 8.762
+Período: 01/05/2025 a 01/09/2025 (4 meses)  
+Total de notícias: 8.762
 
 
 
@@ -35,12 +35,12 @@ O conjunto de dados foi construído através de coleta automatizada diária via 
 
 
 
-### Dados de Mercado
+### Dados de Mercado e Sentimento
 
 Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
-- **Ativos analisados**: PETR4.SA, VALE3.SA, EMBR3.SA, BOVA11.SA
-- **Período**: Maio a setembro de 2025
-- **Total de pregões**: 85 dias úteis
+- Ativos analisados: PETR4.SA, VALE3.SA, EMBR3.SA, BOVA11.SA
+- Período: 01/05/2025 a 01/09/2025
+- Total de pregões: 85 dias úteis
 
 
 
@@ -89,16 +89,11 @@ Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
 <img width="842" height="119" alt="image" src="https://github.com/user-attachments/assets/846f30f9-e481-4c92-be91-fa2ae6a95a0f" />
 
 
-BOVA11.SA obteve a maior taxa de melhoria estatisticamente significante
-
-
-
-
 ## Conclusão
 
 Este estudo demonstra que a integração de análise de sentimento com modelos de aprendizado de máquina pode melhorar significativamente a previsão de preços de ativos na B3, especialmente quando:
 - Utilizam-se arquiteturas que exploram relações temporais (LSTM)
-- O horizonte de previsão permite tempo para o sentimento afetar preços (≥ 2 dias)
+- O horizonte de previsão permite tempo para o sentimento afetar preços (h = 2 ou 5 dias)
 - O ativo analisado é um índice agregado (BOVA11)
 
 O uso do FinBERT-PT-BR preenche uma lacuna na literatura brasileira ao incorporar informações subjetivas de forma sistemática. A disponibilização do código e da base tratada contribui para o avanço da pesquisa em finanças computacionais no país.
