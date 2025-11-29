@@ -31,11 +31,12 @@ Total de notícias: 8.762
 
 <img width="1390" height="490" alt="image" src="https://github.com/user-attachments/assets/e2d0f688-d1cf-4f1b-bc7c-099b9e7deff7" />
 
-###FinBERT-PT-BR
+### FinBERT-PT-BR
 
 O FinBERT-PT-BR foi utilizado para classificar cada notícia em probabilidades de sentimento positivo, negativo e neutro, gerando também um score contínuo (p_pos - p_neg).
 
 <img width="690" height="490" alt="image" src="https://github.com/user-attachments/assets/e1753035-0bf6-43d2-8233-b1b191d2c14a" />
+
 
 Esse score foi calculado para cada notícia e, posteriormente, os valores foram agregados por mediana ao nível diário, reduzindo outliers e capturando uma medida estável do humor do mercado a cada pregão.
 
@@ -45,6 +46,8 @@ Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
 - Ativos analisados: PETR4.SA, VALE3.SA, EMBR3.SA, BOVA11.SA
 - Período: 01/05/2025 a 01/09/2025 (4 meses)
 - Total de pregões: 85 dias úteis
+
+Os dados de notícias foram alinhados aos preços de fechamento dos ativos por data, mantendo apenas os dias úteis da B3.
 
 Trecho de exemplo do Dataset final:
 
@@ -73,18 +76,17 @@ Trecho de exemplo do Dataset final:
 
 <img width="846" height="238" alt="image" src="https://github.com/user-attachments/assets/951f9fe9-e0f3-45b5-9e40-24debaa1b6c6" />
 
-<img width="1183" height="584" alt="image" src="https://github.com/user-attachments/assets/bda30d27-4aab-49d3-ba6c-36e4b1ef14c8" />
+<img width="1183" height="584" alt="image" src="https://github.com/user-attachments/assets/3ccdf8fc-f9fa-4eb7-8985-5e4ab298777d" />
 
-<img width="1381" height="779" alt="image" src="https://github.com/user-attachments/assets/4a86a826-1576-4ab6-ad18-0d3d7e8e39a4" />
-
+<img width="1381" height="779" alt="image" src="https://github.com/user-attachments/assets/b2c87855-f61e-4e18-8845-df4132830e77" />
 
 ### SVR
 
 <img width="831" height="221" alt="image" src="https://github.com/user-attachments/assets/e9ba8dde-dd56-4f82-a229-443e9cc9504c" />
 
-<img width="1183" height="584" alt="image" src="https://github.com/user-attachments/assets/3ccdf8fc-f9fa-4eb7-8985-5e4ab298777d" />
+<img width="1183" height="584" alt="image" src="https://github.com/user-attachments/assets/bda30d27-4aab-49d3-ba6c-36e4b1ef14c8" />
 
-<img width="1381" height="779" alt="image" src="https://github.com/user-attachments/assets/b2c87855-f61e-4e18-8845-df4132830e77" />
+<img width="1381" height="779" alt="image" src="https://github.com/user-attachments/assets/4a86a826-1576-4ab6-ad18-0d3d7e8e39a4" />
 
 
 
