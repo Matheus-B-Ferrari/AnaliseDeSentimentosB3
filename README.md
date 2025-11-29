@@ -5,15 +5,17 @@
 - Matheus Barbosa Ferrari
 - Rogério de Oliveira - Orientador
 
-### [Artigo Completo](https://github.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/blob/main/Análise_de_Sentimento_na_Precificação_de_Ativos_na_Bolsa_Brasileira.pdf)
+### [Artigo](https://github.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/blob/main/Análise_de_Sentimento_na_Precificação_de_Ativos_na_Bolsa_Brasileira.pdf)
 
 ## Resumo
 
-Este trabalho investiga o impacto da análise de sentimento de notícias financeiras na previsão de preços de ações da Bolsa de Valores Brasileira (B3). O objetivo é avaliar se a incorporação de features de sentimento extraídas através do FinBERT-PT-BR melhora a capacidade preditiva de modelos de aprendizado de máquina.
+Este trabalho investiga o impacto da análise de sentimento de notícias financeiras na previsão de preços de ações da Bolsa de Valores Brasileira (B3). O objetivo é avaliar se a incorporação de features de sentimento extraídas com o FinBERT-PT-BR aprimora a capacidade preditiva de modelos de aprendizado de máquina.
 
-Foram coletadas 8.762 notícias de três portais brasileiros (Exame, Infomoney e Valor Econômico) entre maio e setembro de 2025, classificadas quanto ao sentimento e integradas aos dados históricos de preços de quatro ativos (PETR4, VALE3, EMBR3, BOVA11). Os modelos LSTM e SVR foram treinados com diferentes janelas temporais (7 e 14 dias) e horizontes de previsão (1, 2 e 5 dias).
+Foram coletadas 8.762 notícias de três portais brasileiros (Exame, Infomoney e Valor Econômico) entre maio e setembro de 2025. Cada notícia foi classificada quanto ao sentimento, e os scores diários foram agregados por mediana, criando uma série temporal representativa do humor do mercado. Esses dados foram integrados aos preços históricos de quatro ativos (PETR4, VALE3, EMBR3, BOVA11) para compor o dataset final utilizado na modelagem.
 
-Os principais resultados demonstram que o sentimento midiático pode complementar modelos quantitativos, especialmente em arquiteturas que exploram relações temporais nativamente, como a LSTM, com melhorias de até 38% no erro de previsão para horizontes de 5 dias.
+Os modelos LSTM e SVR foram treinados com janelas temporais de 7 e 14 dias e horizontes de previsão de 1, 2 e 5 dias. Para avaliar a significância das diferenças, foram realizados testes t de Student comparando previsões com e sem sentimento em 72 experimentos, permitindo medir estatisticamente o impacto dessa variável.
+
+Os resultados mostram que o sentimento midiático pode complementar modelos quantitativos tradicionais, especialmente em arquiteturas que capturam dependências temporais, como a LSTM. Nessas configurações, observam-se reduções de erro de até 38% em horizontes mais longos (5 dias), evidenciando que o efeito do sentimento tende a se manifestar com defasagem.
 
 ## [Dados](https://github.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/blob/main/Coleta_e_Processamento.ipynb)
 
@@ -27,22 +29,24 @@ Período: 01/05/2025 a 01/09/2025 (4 meses)
 Total de notícias: 8.762
 
 
-
-
 <img width="1390" height="490" alt="image" src="https://github.com/user-attachments/assets/e2d0f688-d1cf-4f1b-bc7c-099b9e7deff7" />
+
+###FinBERT-PT-BR
+
+O FinBERT-PT-BR foi utilizado para classificar cada notícia em probabilidades de sentimento positivo, negativo e neutro, gerando também um score contínuo (p_pos - p_neg).
 
 <img width="690" height="490" alt="image" src="https://github.com/user-attachments/assets/e1753035-0bf6-43d2-8233-b1b191d2c14a" />
 
+Esse score foi calculado para cada notícia e, posteriormente, os valores foram agregados por mediana ao nível diário, reduzindo outliers e capturando uma medida estável do humor do mercado a cada pregão.
 
-
-### Dados de Mercado e Sentimento
+### Dados de Mercado + Sentimento
 
 Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
 - Ativos analisados: PETR4.SA, VALE3.SA, EMBR3.SA, BOVA11.SA
-- Período: 01/05/2025 a 01/09/2025
+- Período: 01/05/2025 a 01/09/2025 (4 meses)
 - Total de pregões: 85 dias úteis
 
-
+Trecho de exemplo do Dataset final:
 
 <img width="533" height="188" alt="image" src="https://github.com/user-attachments/assets/7c69609d-9902-4b92-88dd-c8b13dc2d825" />
 
@@ -61,7 +65,7 @@ Dados históricos de fechamento dos preços obtidos via biblioteca yfinance:
 #### [SVR (Support Vector Regression)](https://github.com/Matheus-B-Ferrari/AnaliseDeSentimentosB3/blob/main/TCC_Unificado_SVR.ipynb)
 - Kernel: RBF
 - Parâmetro C = 1.0
-- Gamma: 'scale' (adaptativo)
+- Gamma: 'scale'
 
 ## Resultados
 
